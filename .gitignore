@@ -9,7 +9,7 @@ dvt/
 .settings/
 .config/
 BIOS/
-/Debug/
+Debug/
 Release/
 
 # 额外

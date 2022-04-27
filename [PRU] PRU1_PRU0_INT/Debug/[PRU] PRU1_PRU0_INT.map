@@ -1,0 +1,134 @@
+******************************************************************************
+                     PRU Linker PC v2.3.3                      
+******************************************************************************
+>> Linked Wed Apr 27 15:57:33 2022
+
+OUTPUT FILE NAME:   <[PRU] PRU1_PRU0_INT.out>
+ENTRY POINT SYMBOL: "_c_int00_noinit_noargs"  address: 00000000
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+PAGE 0:
+  PRUIRAM               00000000   00001000  000003b0  00000c50  RWIX
+
+PAGE 1:
+  PRUDRAM               00000000   00000200  00000080  00000180  RWIX
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.text:_c_int00* 
+*          0    00000000    0000001c     
+                  00000000    0000001c     rtspruv1_le.lib : boot.c.obj (.text:_c_int00_noinit_noargs)
+
+.text      0    0000001c    00000394     
+                  0000001c    00000138     Interrupt.lib : interrupt.obj (.text:IntEventMap)
+                  00000154    00000070     main.obj (.text:main)
+                  000001c4    00000068     Drivers.lib : gpio_pru.obj (.text:GPOPinWrite)
+                  0000022c    00000044     main.obj (.text:InterruptInit)
+                  00000270    00000040     main.obj (.text:GPIOBankPinMuxSet)
+                  000002b0    00000038     Interrupt.lib : interrupt.obj (.text:IntHostIntStatusGet)
+                  000002e8    00000034     main.obj (.text:Delay)
+                  0000031c    00000020     Interrupt.lib : interrupt.obj (.text:IntEventEnable)
+                  0000033c    00000020                   : interrupt.obj (.text:IntHostEnable)
+                  0000035c    00000020                   : interrupt.obj (.text:IntSystemEventClear)
+                  0000037c    00000014                   : interrupt.obj (.text:IntGlobalEnable)
+                  00000390    00000010                   : interrupt.obj (.text:IntHostStatusClear)
+                  000003a0    00000008     rtspruv1_le.lib : exit.c.obj (.text:abort)
+                  000003a8    00000008                     : exit.c.obj (.text:loader_exit)
+
+.cinit     0    00000000    00000000     UNINITIALIZED
+
+.stack     1    00000000    00000080     UNINITIALIZED
+                  00000000    00000004     rtspruv1_le.lib : boot.c.obj (.stack)
+                  00000004    0000007c     --HOLE--
+
+MODULE SUMMARY
+
+       Module          code   ro data   rw data
+       ------          ----   -------   -------
+    .\
+       main.obj        296    0         0      
+    +--+---------------+------+---------+---------+
+       Total:          296    0         0      
+                                               
+    ../../Library/PRU/Drivers/Debug/Drivers.lib
+       gpio_pru.obj    104    0         0      
+    +--+---------------+------+---------+---------+
+       Total:          104    0         0      
+                                               
+    ../../Library/PRU/Interrupt/Debug/Interrupt.lib
+       interrupt.obj   500    0         0      
+    +--+---------------+------+---------+---------+
+       Total:          500    0         0      
+                                               
+    C:\ti\ti-cgt-pru_2.3.3\lib\rtspruv1_le.lib
+       boot.c.obj      28     0         0      
+       exit.c.obj      16     0         0      
+    +--+---------------+------+---------+---------+
+       Total:          44     0         0      
+                                               
+       Stack:          0      0         128    
+    +--+---------------+------+---------+---------+
+       Grand Total:    944    0         128    
+
+
+SEGMENT ATTRIBUTES
+
+    id tag      seg value
+    -- ---      --- -----
+     0 PHA_PAGE 1   1    
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+page  address   name                  
+----  -------   ----                  
+0     000003a8  C$$EXIT               
+0     000001c4  GPOPinWrite           
+0     0000031c  IntEventEnable        
+0     0000001c  IntEventMap           
+0     0000037c  IntGlobalEnable       
+0     0000033c  IntHostEnable         
+0     000002b0  IntHostIntStatusGet   
+0     00000390  IntHostStatusClear    
+0     0000035c  IntSystemEventClear   
+0     0000022c  InterruptInit         
+1     00000080  __TI_STACK_END        
+abs   00000080  __TI_STACK_SIZE       
+abs   ffffffff  __c_args__            
+0     00000000  _c_int00_noinit_noargs
+1     00000000  _stack                
+0     000003a0  abort                 
+0     00000154  main                  
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+page  address   name                  
+----  -------   ----                  
+0     00000000  _c_int00_noinit_noargs
+0     0000001c  IntEventMap           
+0     00000154  main                  
+0     000001c4  GPOPinWrite           
+0     0000022c  InterruptInit         
+0     000002b0  IntHostIntStatusGet   
+0     0000031c  IntEventEnable        
+0     0000033c  IntHostEnable         
+0     0000035c  IntSystemEventClear   
+0     0000037c  IntGlobalEnable       
+0     00000390  IntHostStatusClear    
+0     000003a0  abort                 
+0     000003a8  C$$EXIT               
+1     00000000  _stack                
+1     00000080  __TI_STACK_END        
+abs   00000080  __TI_STACK_SIZE       
+abs   ffffffff  __c_args__            
+
+[17 symbols]
